@@ -773,6 +773,8 @@ class googleimagesdownload:
             else:
                 #format the item for readability
                 object = self.format_object(object)
+                imageURL = object['image_link']
+                object['image_format'] = imageURL.split(".")[-1]
                 if arguments['metadata']:
                     if not arguments["silent_mode"]:
                         print("\nImage Metadata: " + str(object))
